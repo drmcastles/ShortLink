@@ -6,8 +6,7 @@ import ru.mifi.stepan.shortlink.domain.ServiceFabric;
 import ru.mifi.stepan.shortlink.dto.LimitExpiredInfoDto;
 import ru.mifi.stepan.shortlink.exception.LimitExpiredException;
 import ru.mifi.stepan.shortlink.exception.LinkNotFoundException;
-import ru.mifi.stepan.shortlink.view.menu.MainMenu;
-import ru.mifi.stepan.shortlink.view.menu.command.CommandMenu;
+import ru.mifi.stepan.shortlink.view.menu.UserMenu;
 import ru.mifi.stepan.shortlink.view.utils.ConsoleUtil;
 
 import java.awt.*;
@@ -23,7 +22,7 @@ public class EnterLink extends CommandMenu {
     private IUserService userService = ServiceFabric.getUserService();
     private ILinkService linkService = ServiceFabric.getLinkService();
 
-    public EnterLink(MainMenu mainMenu) {
+    public EnterLink(UserMenu mainMenu) {
         super(mainMenu);
     }
 

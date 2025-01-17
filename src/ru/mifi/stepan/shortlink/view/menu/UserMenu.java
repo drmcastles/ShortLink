@@ -2,6 +2,7 @@ package ru.mifi.stepan.shortlink.view.menu;
 
 import ru.mifi.stepan.shortlink.domain.ServiceFabric;
 import ru.mifi.stepan.shortlink.dto.NotificationDto;
+import ru.mifi.stepan.shortlink.view.menu.command.EnterLink;
 import ru.mifi.stepan.shortlink.view.menu.command.LinkCreateMenu;
 import ru.mifi.stepan.shortlink.view.menu.command.LinkDeleteMenu;
 import ru.mifi.stepan.shortlink.view.menu.command.LinkEditMenu;
@@ -19,6 +20,7 @@ public class UserMenu extends AbstractMenu {
     private final IMenu LINK_SHOW_MENU = new LinkShowMenu(this);
     private final IMenu parent;
     private final IMenu LINK_CREATE_MENU = new LinkCreateMenu(this);
+    private final IMenu ENTER_LINK_MENU = new EnterLink(this);
 
 
     public UserMenu(IMenu parent) {
@@ -45,7 +47,8 @@ public class UserMenu extends AbstractMenu {
         mainMenuOptions.add(new MenuOption("2", "Редактирование ссылок", LINK_EDIT_MENU));
         mainMenuOptions.add(new MenuOption("3", "Удалить ссылку", LINK_DELETE_MENU));
         mainMenuOptions.add(new MenuOption("4", "Создание короткой ссылки", LINK_CREATE_MENU));
-        mainMenuOptions.add(new MenuOption("5", "Выход", parent));
+        mainMenuOptions.add(new MenuOption("5","Перейти по короткой ссылке", ENTER_LINK_MENU));
+        mainMenuOptions.add(new MenuOption("6", "Назад", parent));
         return mainMenuOptions;
     }
 

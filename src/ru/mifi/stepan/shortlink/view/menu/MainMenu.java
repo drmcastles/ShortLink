@@ -11,7 +11,7 @@ import java.util.List;
 public class MainMenu extends AbstractMenu {
 
     private final IMenu SHOW_USER_MENU = new UserBrowser(this);
-    private final IMenu ENTER_LINK_MENU = new EnterLink(this);
+
     private final IMenu USER_MENU = new UserMenu(this);
     private final IMenu LINK_CREATE_MENU = new LinkCreateMenu(USER_MENU);
     private final IMenu ENTER_MENU = new EnterMenu(USER_MENU, this);
@@ -20,8 +20,7 @@ public class MainMenu extends AbstractMenu {
         List<MenuOption> mainMenuOptions = new ArrayList<>();
         mainMenuOptions.add(new MenuOption("1","Вход", ENTER_MENU));
         mainMenuOptions.add(new MenuOption("2","Создание короткой ссылки", LINK_CREATE_MENU));
-        mainMenuOptions.add(new MenuOption("3","Перейти по короткой ссылке", ENTER_LINK_MENU));
-        mainMenuOptions.add(new MenuOption("4","Ввывести список всех пользователей", SHOW_USER_MENU));
+        mainMenuOptions.add(new MenuOption("3","Ввывести список всех пользователей", SHOW_USER_MENU));
         return mainMenuOptions;
     }
 
